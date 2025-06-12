@@ -9,6 +9,16 @@ public class Cancion extends Catalogo
     private Time duracion;
     private Disco disco;
 
+    @Override
+    public Integer getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(Integer id) {
+        super.setId(id);
+    }
+
     public Cancion() {
     }
 
