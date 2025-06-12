@@ -95,9 +95,9 @@ public class Disco extends Catalogo
                 ", descuento=" + descuento*100+"%"+
                 ", fecha=" + fecha +
                 ", imagen='" + imagen + '\'' +
-                ", Id artista=" + artista.getId() + " artista: " + artista.getNombre()+
-                ", Id disquera=" + disquera.getId() +" disquera: "+disquera.getNombre()+
-                ", Id genero=" + genero.getId()+" genero: "+genero.getDescripcion()
+                ", Id artista=" + artista.getId() +
+                ", Id disquera=" + disquera.getId() +
+                ", Id genero=" + genero.getId()
                 +", id Disco="+id;
     }
 }

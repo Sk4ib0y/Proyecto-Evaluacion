@@ -40,7 +40,7 @@ public class Cancion extends Catalogo
     public String toString() {
         return "titulo='" + titulo + '\'' +
                 ", duracion=" + duracion.getMinutes() +":"+ duracion.getSeconds()+
-                ", id del disco=" + disco.getId() +" Disco: "+disco.getTitulo()
+                ", id del disco=" + disco.getId()
                 +", id Cancion="+id;
     }
 }
