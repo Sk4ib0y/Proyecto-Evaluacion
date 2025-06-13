@@ -1,32 +1,54 @@
 package HernandezSierraChristian.repository.jdbc.implement;
 
+import HernandezSierraChristian.model.Genero;
+import HernandezSierraChristian.repository.jdbc.GeneroJDBC;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GeneroJDBCImplTest {
 
-    @Test
-    void getInstance() {
-    }
+        @Test
+        void getInstance()  {
+            assertNotNull(GeneroJDBCImpl.getInstance());
+        }
 
-    @Test
-    void findAll() {
-    }
+        @Test
+        void findAll() {
+            GeneroJDBC generoJDBC = GeneroJDBCImpl.getInstance();
+            List<Genero> list = generoJDBC.findAll();
+            if(list == null || list.isEmpty())
+            {
+                System.out.println("No hay elementos");
+                return;
+            }
+            list.stream().forEach( e-> System.out.println(e.toString()));
+            assertNotNull(list);
+            assertTrue(list.size() >= 1);
 
-    @Test
-    void save() {
-    }
+        }
 
-    @Test
-    void update() {
-    }
+        @Test
+        void save() {
+            Genero genero = new Genero();
+            boolean res = false;
+            GeneroJDBC generoJDBC = GeneroJDBCImpl.getInstance();
+            genero.setDescripcion("Grunge");
+            res = generoJDBC.save(genero);
+            assertEquals(true, res);
+        }
 
-    @Test
-    void delete() {
-    }
+        @Test
+        void update() {
+            Genero genero = new Genero();
+            boolean res = false;
+            genero.setDescripcion("Rock");
+            genero.setId(2);
+            GeneroJDBC generoJDBC = GeneroJDBCImpl.getInstance();
+            res = generoJDBC.update(genero);
+            assertEquals(true, res);
+        }
 
-    @Test
-    void findById() {
     }
-}
